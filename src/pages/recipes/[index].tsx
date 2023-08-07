@@ -14,7 +14,7 @@ const Recipe = ({ recipe }: Props) => {
 
   function makeIngredientsList(recipe: Recipe) {
     const ingredients: string[] = [];
-    for (let [key, value] of Object?.entries(recipe)) {
+    for (let [key, value] of Object.entries(recipe)) {
       if (key.includes('strIngredient') && Boolean(value)) {
         ingredients.push(value);
       }
@@ -40,14 +40,14 @@ const Recipe = ({ recipe }: Props) => {
       <main className='max-w-6xl mx-auto px-4'>
         <div className='flex flex-col justify-center'>
           <div className='mt-4 px-4 py-2 bg-gray-100'>
-            <h4 className='font-semibold mr-2'>{recipe?.strMeal}</h4>
+            <h4 className='font-semibold mr-2'>{recipe.strMeal}</h4>
           </div>
 
           <div className='flex flex-col lg:flex-row lg:space-x-4 mt-4'>
             <div className='flex-1'>
               <Image
-                src={recipe?.strMealThumb ?? ''}
-                alt={recipe?.strMeal ?? ''}
+                src={recipe?.strMealThumb}
+                alt={recipe?.strMeal}
                 height={800}
                 width={1200}
               />
@@ -64,7 +64,7 @@ const Recipe = ({ recipe }: Props) => {
 
               <div className='bg-gray-100 mt-4 py-2 px-4'>Recipe</div>
               <div className='mt-2 mb-4'>
-                {instructions?.map((instruction, i) => (
+                {instructions.map((instruction, i) => (
                   <div
                     key={i}
                     className='flex bg-gray-50 p-2 my-2 rounded-md shadow-sm'
