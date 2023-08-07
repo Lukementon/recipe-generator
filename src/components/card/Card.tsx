@@ -14,7 +14,6 @@ export interface Item {
   id: string;
   name: string;
   thumbnail: string;
-  desc?: string;
 }
 
 type Props = {
@@ -24,7 +23,7 @@ type Props = {
 };
 
 const Card = ({ item, queryString, handleSelect }: Props) => {
-  const { id, thumbnail, name } = item;
+  const { thumbnail, name } = item;
   return (
     <UICard>
       <CardHeader className='h-[5rem] mb-2'>

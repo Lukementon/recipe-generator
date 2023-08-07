@@ -13,6 +13,7 @@ const Categories = ({ categories }: Props) => {
   function handleCategorySelect(categoryName: string) {
     router.push(`/meals/${categoryName}`);
   }
+
   return (
     <div className='p-4 w-full flex flex-col items-center lg:items-start'>
       <div className='mt-6'>
@@ -80,7 +81,6 @@ export function makeCategoriesGeneric(categories: Category[]): Item[] {
     id: category.idCategory,
     name: category.strCategory,
     thumbnail: category.strCategoryThumb,
-    desc: category.strCategoryDescription,
   }));
 }
 
