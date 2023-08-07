@@ -17,12 +17,13 @@ export interface Item {
 }
 
 type Props = {
+  buttonContent: string;
   item: Item;
   handleSelect: (str: string) => void;
   queryString: string;
 };
 
-const Card = ({ item, queryString, handleSelect }: Props) => {
+const Card = ({ buttonContent, item, queryString, handleSelect }: Props) => {
   const { thumbnail, name } = item;
   return (
     <UICard>
@@ -38,7 +39,7 @@ const Card = ({ item, queryString, handleSelect }: Props) => {
       </CardContent>
       <CardFooter>
         <Button className='w-full' onClick={() => handleSelect(queryString)}>
-          View Recipe
+          {buttonContent}
         </Button>
       </CardFooter>
     </UICard>

@@ -27,6 +27,7 @@ const Categories = ({ categories }: Props) => {
             item={category}
             handleSelect={handleCategorySelect}
             queryString={category.name}
+            buttonContent={'View Meals'}
           />
         ))}
         {mappedCategories.slice(4, 5)?.map(category => (
@@ -35,6 +36,7 @@ const Categories = ({ categories }: Props) => {
               item={category}
               handleSelect={handleCategorySelect}
               queryString={category.name}
+              buttonContent={'View Meals'}
             />
           </div>
         ))}
@@ -44,6 +46,7 @@ const Categories = ({ categories }: Props) => {
             item={category}
             handleSelect={handleCategorySelect}
             queryString={category.name}
+            buttonContent={'View Meals'}
           />
         ))}
         {mappedCategories.slice(9, 12)?.map(category => (
@@ -52,6 +55,7 @@ const Categories = ({ categories }: Props) => {
             item={category}
             handleSelect={handleCategorySelect}
             queryString={category.name}
+            buttonContent={'View Meals'}
           />
         ))}
         {mappedCategories.slice(12, 13)?.map(category => (
@@ -60,6 +64,7 @@ const Categories = ({ categories }: Props) => {
               item={category}
               handleSelect={handleCategorySelect}
               queryString={category.name}
+              buttonContent={'View Meals'}
             />
           </div>
         ))}
@@ -69,6 +74,7 @@ const Categories = ({ categories }: Props) => {
             item={category}
             handleSelect={handleCategorySelect}
             queryString={category.name}
+            buttonContent={'View Meals'}
           />
         ))}
       </div>

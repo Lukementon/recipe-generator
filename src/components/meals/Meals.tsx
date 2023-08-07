@@ -27,6 +27,7 @@ const Meals = ({ meals }: Props) => {
             item={meal}
             handleSelect={handleSelectMeal}
             queryString={meal.id}
+            buttonContent={'View Recipe'}
           />
         ))}
       </div>
