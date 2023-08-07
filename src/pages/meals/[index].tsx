@@ -3,6 +3,7 @@ import React from 'react';
 import axios from '../../instances/axios';
 import { Meal, SearchMealResponse } from '@/types/types';
 import Meals from '@/components/meals/Meals';
+import Header from '@/components/header/Header';
 
 type Props = {
   meals: Meal[];
@@ -10,8 +11,12 @@ type Props = {
 
 const Meal = ({ meals }: Props) => {
   return (
-    <div className='max-w-7xl mx-auto'>
-      <Meals meals={meals} />
+    <div>
+      <Header />
+
+      <main className='max-w-7xl mx-auto'>
+        <Meals meals={meals} />
+      </main>
     </div>
   );
 };

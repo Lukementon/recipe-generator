@@ -21,7 +21,7 @@ const Header = ({ queryFn, showSearchBar = false }: Props) => {
         onSubmit={e => handleSubmit(e)}
         className='flex flex-col items-center justify-center text-center md:flex md:flex-row md:items-center md:justify-between max-w-screen-2xl mx-auto py-2 px-4'
       >
-        <Link href={'http://localhost:3000'}>
+        <Link href={'/'}>
           <h1 className='cursor-pointer'>Recipe Genie</h1>
         </Link>
 

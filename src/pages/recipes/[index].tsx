@@ -34,10 +34,10 @@ const Recipe = ({ recipe }: Props) => {
   }
 
   return (
-    <main>
+    <div>
       <Header />
 
-      <div className='max-w-6xl mx-auto px-4'>
+      <main className='max-w-6xl mx-auto px-4'>
         <div className='flex flex-col justify-center'>
           <div className='mt-4 px-4 py-2 bg-gray-100'>
             <h4 className='font-semibold mr-2'>{recipe?.strMeal}</h4>
@@ -76,8 +76,8 @@ const Recipe = ({ recipe }: Props) => {
             </div>
           </div>
         </div>
-      </div>
-    </main>
+      </main>
+    </div>
   );
 };
 
