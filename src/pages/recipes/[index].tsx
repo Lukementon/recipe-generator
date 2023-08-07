@@ -29,7 +29,7 @@ const Recipe = ({ recipe }: Props) => {
       .map(line => line.trim())
       .filter(line => line !== '') // Remove any empty lines
       .map(inst => inst.replace(/^\s*((\d+|[Ss]tep)\s*)?[-.) ]/gm, '')) // Replace strings like "Step 1, 1), 1-" etc
-      .filter(char => char !== ''); // Remove any emtpy lines after .replace method
+      .filter(char => char !== ''); // Remove any empty lines after .replace method
     return filteredInstructions;
   }
 
@@ -54,11 +54,11 @@ const Recipe = ({ recipe }: Props) => {
             </div>
             <div className='flex-1 mt-4 lg:mt-0'>
               <div className='bg-gray-100 py-2 px-4'>Ingredients</div>
-              <div className='mt-2 grid md:grid-cols-3'>
+              <div>
                 {ingredients.map((el, i) => (
-                  <div key={i} className=''>
-                    <li className=''>{el}</li>
-                  </div>
+                  <li key={i} className=''>
+                    {el}
+                  </li>
                 ))}
               </div>
 
