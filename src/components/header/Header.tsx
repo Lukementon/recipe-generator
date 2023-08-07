@@ -22,7 +22,9 @@ const Header = ({ queryFn, showSearchBar = false }: Props) => {
         className='flex flex-col items-center justify-center text-center md:flex md:flex-row md:items-center md:justify-between max-w-screen-2xl mx-auto py-2 px-4'
       >
         <Link href={'/'}>
-          <h1 className='cursor-pointer'>Recipe Genie</h1>
+          <h1 data-cy='title' className='cursor-pointer'>
+            Recipe Genie
+          </h1>
         </Link>
 
         <div className='flex w-3/4 sm:w-1/2 justify-center bg-white mt-2 md:mt-0 rounded-md items-center overflow-hidden'>

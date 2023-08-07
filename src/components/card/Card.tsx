@@ -24,7 +24,7 @@ type Props = {
 const Card = ({ buttonContent, item, queryString, handleSelect }: Props) => {
   const { thumbnail, name } = item;
   return (
-    <UICard>
+    <UICard data-cy='card'>
       <CardHeader className='h-[5rem] mb-2'>
         <CardTitle className='w-full flex justify-center'>{name}</CardTitle>
       </CardHeader>
@@ -36,7 +36,11 @@ const Card = ({ buttonContent, item, queryString, handleSelect }: Props) => {
         </div>
       </CardContent>
       <CardFooter>
-        <Button className='w-full' onClick={() => handleSelect(queryString)}>
+        <Button
+          data-cy='view-btn'
+          className='w-full'
+          onClick={() => handleSelect(queryString)}
+        >
           {buttonContent}
         </Button>
       </CardFooter>
