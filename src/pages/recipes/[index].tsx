@@ -9,13 +9,7 @@ interface Props {
 }
 
 const Recipe = ({ recipe }: Props) => {
-  const instructionLines = recipe.strInstructions.split('\n');
-  const filteredInstructions = instructionLines.filter(
-    line => !line.includes('STEP') && !line.includes('DIRECTIONS:')
-  );
-  const trimmedInstructions = filteredInstructions.map(line => line.trim());
-  const instructions = trimmedInstructions.filter(line => line !== '');
-
+  const instructions = makeInstructionsList(recipe);
   const ingredients = makeIngredientsList(recipe);
 
   function makeIngredientsList(recipe: Recipe) {
@@ -26,6 +20,16 @@ const Recipe = ({ recipe }: Props) => {
       }
     }
     return ingredients;
+  }
+
+  function makeInstructionsList(recipe: Recipe) {
+    const instructionLines = recipe.strInstructions.split('\n');
+    const filteredInstructions = instructionLines.filter(
+      line => !line.includes('STEP') && !line.includes('DIRECTIONS:')
+    );
+    const trimmedInstructions = filteredInstructions.map(line => line.trim());
+    const instructions = trimmedInstructions.filter(line => line !== '');
+    return instructions;
   }
 
   return (
