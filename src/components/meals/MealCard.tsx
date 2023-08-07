@@ -8,13 +8,19 @@ import {
 import { Meal } from '@/types/types';
 import Image from 'next/image';
 import { Button } from '../ui/button';
+import { useRouter } from 'next/router';
 
 type Props = {
   meal: Meal;
 };
 
 const MealCard = ({ meal }: Props) => {
+  const router = useRouter();
   const { strMeal, strMealThumb } = meal;
+
+  function handleRecipeSelect(mealId: string) {
+    router.push(`/recipes/${mealId}`);
+  }
   return (
     <Card>
       <CardHeader className='h-[5rem] mb-2'>
@@ -28,7 +34,12 @@ const MealCard = ({ meal }: Props) => {
         </div>
       </CardContent>
       <CardFooter>
-        <Button className='w-full'>View Recipe</Button>
+        <Button
+          className='w-full'
+          onClick={() => handleRecipeSelect(meal.idMeal)}
+        >
+          View Recipe
+        </Button>
       </CardFooter>
     </Card>
   );

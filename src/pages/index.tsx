@@ -25,7 +25,7 @@ export default function Home({ categories }: Props) {
 
   return (
     <main>
-      <Header queryFn={searchRecipies} />
+      <Header showSearchBar queryFn={searchRecipies} />
 
       <div className='max-w-7xl mx-auto'>
         {meals && <Meals meals={meals} />}
