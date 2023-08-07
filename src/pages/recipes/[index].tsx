@@ -24,12 +24,13 @@ const Recipe = ({ recipe }: Props) => {
 
   function makeInstructionsList(recipe: Recipe) {
     const instructionLines = recipe.strInstructions.split('\n');
-    const filteredInstructions = instructionLines.filter(
-      line => !line.includes('STEP') && !line.includes('DIRECTIONS:')
-    );
-    const trimmedInstructions = filteredInstructions.map(line => line.trim());
-    const instructions = trimmedInstructions.filter(line => line !== '');
-    return instructions;
+    const filteredInstructions = instructionLines
+      .filter(line => !line.includes('STEP') && !line.includes('DIRECTIONS:'))
+      .map(line => line.trim())
+      .filter(line => line !== '') // Remove any empty lines
+      .map(inst => inst.replace(/^\s*((\d+|[Ss]tep)\s*)?[-.) ]/gm, '')) // Replace strings like "Step 1, 1), 1-" etc
+      .filter(char => char !== ''); // Remove any emtpy lines after .replace method
+    return filteredInstructions;
   }
 
   return (
