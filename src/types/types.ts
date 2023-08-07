@@ -73,6 +73,10 @@ export interface SearchRecipeResponse {
   meals: Meal[];
 }
 
+export interface SearchMealResponse {
+  meals: Meal[];
+}
+
 export interface RecipeResponse {
   meals: Recipe[];
 }

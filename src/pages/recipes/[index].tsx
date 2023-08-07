@@ -62,7 +62,7 @@ const Recipe = ({ recipe }: Props) => {
               </div>
 
               <div className='bg-gray-100 mt-4 py-2 px-4'>Recipe</div>
-              <div className='mt-2 mb-4 lg:mb-0'>
+              <div className='mt-2 mb-4'>
                 {instructions?.map((instruction, i) => (
                   <div
                     key={i}
