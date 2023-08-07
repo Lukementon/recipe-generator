@@ -1,11 +1,9 @@
-import { Category } from '@/types/types';
-import React from 'react';
 import {
-  Card as UICard,
   CardContent,
   CardFooter,
   CardHeader,
   CardTitle,
+  Card as UICard,
 } from '@/components/ui/card';
 import Image from 'next/image';
 import { Button } from '../ui/button';
