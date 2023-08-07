@@ -54,7 +54,7 @@ const Recipe = ({ recipe }: Props) => {
             </div>
             <div className='flex-1 mt-4 lg:mt-0'>
               <div className='bg-gray-100 py-2 px-4'>Ingredients</div>
-              <div>
+              <div className='mt-2'>
                 {ingredients.map((el, i) => (
                   <li key={i} className=''>
                     {el}
