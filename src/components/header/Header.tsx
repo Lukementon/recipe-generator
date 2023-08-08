@@ -1,6 +1,7 @@
 import { MagnifyingGlassIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
 import { FormEvent, useState } from 'react';
+import { Button } from '../ui/button';
 
 interface Props {
   queryFn?: (queryString: string) => Promise<void>;
@@ -37,17 +38,15 @@ const Header = ({ queryFn, showSearchBar = false }: Props) => {
                 placeholder='Search recipes...'
                 onChange={e => setQueryString(e.target.value)}
               />
-              <button
+              <Button
                 type='submit'
                 disabled={isButtonDisabled}
-                className={`bg-gray-200 ${
-                  isButtonDisabled ? 'cursor-not-allowed' : 'cursor-pointer'
-                } px-2 overflow-visible text-gray-500`}
+                className='rounded-none'
               >
                 <MagnifyingGlassIcon
                   className={`h-6 w-6 ${isButtonDisabled && 'text-gray-300'}`}
                 />
-              </button>
+              </Button>
             </>
           )}
         </div>
