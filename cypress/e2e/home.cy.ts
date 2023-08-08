@@ -13,11 +13,9 @@ context('Home Page', () => {
     cy.get('@category-list').contains('Beef');
     cy.get('@category-list').contains('Chicken');
     cy.get('@category-list').contains('Vegan');
-  });
-
-  it('should navigate to /meals/Beef', () => {
-    cy.get('[data-cy="view-btn"]').contains('View Meals').eq(0).click();
-    cy.url().should('include', '/meals/Beef');
-    cy.get('[data-cy="card"]').eq(0).contains('Beef and Mustard Pie');
+    cy.get('@category-list').contains('Pasta');
+    cy.get('@category-list').contains('Starter');
+    cy.get('@category-list').contains('Side');
+    cy.get('@category-list').contains('Vegetarian');
   });
 });

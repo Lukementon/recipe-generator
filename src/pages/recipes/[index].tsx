@@ -37,7 +37,7 @@ const Recipe = ({ recipe }: Props) => {
     <div>
       <Header />
 
-      <main className='max-w-6xl mx-auto px-4'>
+      <main data-cy='recipe-page' className='max-w-6xl mx-auto px-4'>
         <div className='flex flex-col justify-center'>
           <div className='mt-4 px-4 py-2 bg-gray-100'>
             <h4 className='font-semibold mr-2'>{recipe.strMeal}</h4>
@@ -46,6 +46,7 @@ const Recipe = ({ recipe }: Props) => {
           <div className='flex flex-col lg:flex-row lg:space-x-4 mt-4'>
             <div className='flex-1'>
               <Image
+                data-cy='recipe-image'
                 src={recipe?.strMealThumb}
                 alt={recipe?.strMeal}
                 height={800}

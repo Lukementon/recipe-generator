@@ -31,6 +31,7 @@ const Header = ({ queryFn, showSearchBar = false }: Props) => {
           {showSearchBar && (
             <>
               <input
+                data-cy='search-bar'
                 className='w-full px-2 bg-white text-sm outline-none text-gray-500'
                 type='text'
                 placeholder='Search recipes...'
