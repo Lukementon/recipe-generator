@@ -25,7 +25,7 @@ const Recipe = ({ recipe }: Props) => {
   function makeInstructionsList(recipe: Recipe) {
     const instructionLines = recipe.strInstructions.split('\n');
     const filteredInstructions = instructionLines
-      .filter(line => !line.includes('STEP') && !line.includes('DIRECTIONS:'))
+      .filter(line => !line.includes('STEP') && !line.includes('DIRECTIONS:')) // Some data includes a line for each step, removing this to improve UI
       .map(line => line.trim())
       .filter(line => line !== '') // Remove any empty lines
       .map(inst => inst.replace(/^\s*((\d+|[Ss]tep)\s*)?[-.) ]/gm, '')) // Replace strings like "Step 1, 1), 1-" etc
@@ -43,15 +43,17 @@ const Recipe = ({ recipe }: Props) => {
             <h4 className='font-semibold mr-2'>{recipe.strMeal}</h4>
           </div>
 
-          <div className='flex flex-col lg:flex-row lg:space-x-4 mt-4'>
-            <div className='flex-1'>
-              <Image
-                data-cy='recipe-image'
-                src={recipe?.strMealThumb}
-                alt={recipe?.strMeal}
-                height={800}
-                width={1200}
-              />
+          <div className='flex flex-col items-center lg:flex-row lg:justify-start lg:items-start lg:space-x-4 mt-4'>
+            <div className='flex-1 w-40 h-40 flex bg-blue-200 justify-center lg:w-full lg:h-full'>
+              <div className='w-full h-full bg-blue-50'>
+                <Image
+                  data-cy='recipe-image'
+                  src={recipe?.strMealThumb}
+                  alt={recipe?.strMeal}
+                  height={800}
+                  width={1200}
+                />
+              </div>
             </div>
             <div className='flex-1 mt-4 lg:mt-0'>
               <div className='bg-gray-100 py-2 px-4'>Ingredients</div>
