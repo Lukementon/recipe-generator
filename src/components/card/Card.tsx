@@ -6,7 +6,6 @@ import {
   Card as UICard,
 } from '@/components/ui/card';
 import Image from 'next/image';
-import { Button } from '../ui/button';
 
 export interface Item {
   id: string;
@@ -14,14 +13,16 @@ export interface Item {
   thumbnail: string;
 }
 
+type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement>;
+
 type Props = {
-  buttonContent: string;
   item: Item;
   handleSelect: (str: string) => void;
   queryString: string;
+  button: React.ComponentType<ButtonProps>;
 };
 
-const Card = ({ buttonContent, item, queryString, handleSelect }: Props) => {
+const Card = ({ item, queryString, handleSelect, button: Button }: Props) => {
   const { thumbnail, name } = item;
   return (
     <UICard data-cy='card'>
@@ -40,9 +41,7 @@ const Card = ({ buttonContent, item, queryString, handleSelect }: Props) => {
           data-cy='view-btn'
           className='w-full'
           onClick={() => handleSelect(queryString)}
-        >
-          {buttonContent}
-        </Button>
+        />
       </CardFooter>
     </UICard>
   );

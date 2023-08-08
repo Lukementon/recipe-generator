@@ -1,6 +1,7 @@
 import { Meal } from '@/types/types';
 import { useRouter } from 'next/router';
 import Card, { Item } from '../card/Card';
+import { ButtonProps, Button as UIButton } from '../ui/button';
 
 type Props = {
   meals: Meal[];
@@ -14,6 +15,10 @@ const Meals = ({ meals }: Props) => {
     router.push(`/recipes/${mealId}`);
   }
 
+  const Button = <T extends ButtonProps>(props: T) => {
+    return <UIButton {...props}>View Recipe</UIButton>;
+  };
+
   return (
     <div
       data-cy='meals'
@@ -26,11 +31,11 @@ const Meals = ({ meals }: Props) => {
       <div className='mt-2 flex flex-col sm:grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-x-2 gap-y-3 grid-flow-row-dense'>
         {mappedMeals?.map(meal => (
           <Card
+            button={Button}
             key={meal.id}
             item={meal}
             handleSelect={handleSelectMeal}
             queryString={meal.id}
-            buttonContent={'View Recipe'}
           />
         ))}
       </div>

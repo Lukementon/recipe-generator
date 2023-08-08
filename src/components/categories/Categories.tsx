@@ -1,6 +1,7 @@
 import { Category } from '@/types/types';
 import { useRouter } from 'next/router';
 import Card, { Item } from '../card/Card';
+import { ButtonProps, Button as UIButton } from '../ui/button';
 
 interface Props {
   categories: Category[];
@@ -13,6 +14,10 @@ const Categories = ({ categories }: Props) => {
   function handleCategorySelect(categoryName: string) {
     router.push(`/meals/${categoryName}`);
   }
+
+  const Button = <T extends ButtonProps>(props: T) => {
+    return <UIButton {...props}>View Meals</UIButton>;
+  };
 
   return (
     <div
@@ -29,58 +34,58 @@ const Categories = ({ categories }: Props) => {
       >
         {mappedCategories.slice(0, 4)?.map(category => (
           <Card
+            button={Button}
             key={category.id}
             item={category}
             handleSelect={handleCategorySelect}
             queryString={category.name}
-            buttonContent={'View Meals'}
           />
         ))}
         {mappedCategories.slice(4, 5)?.map(category => (
           <div key={category.id} className='col-span-2'>
             <Card
+              button={Button}
               item={category}
               handleSelect={handleCategorySelect}
               queryString={category.name}
-              buttonContent={'View Meals'}
             />
           </div>
         ))}
         {mappedCategories.slice(5, 9)?.map(category => (
           <Card
+            button={Button}
             key={category.id}
             item={category}
             handleSelect={handleCategorySelect}
             queryString={category.name}
-            buttonContent={'View Meals'}
           />
         ))}
         {mappedCategories.slice(9, 12)?.map(category => (
           <Card
+            button={Button}
             key={category.id}
             item={category}
             handleSelect={handleCategorySelect}
             queryString={category.name}
-            buttonContent={'View Meals'}
           />
         ))}
         {mappedCategories.slice(12, 13)?.map(category => (
           <div key={category.id} className='col-span-2'>
             <Card
+              button={Button}
               item={category}
               handleSelect={handleCategorySelect}
               queryString={category.name}
-              buttonContent={'View Meals'}
             />
           </div>
         ))}
         {mappedCategories.slice(13, categories.length)?.map(category => (
           <Card
+            button={Button}
             key={category.id}
             item={category}
             handleSelect={handleCategorySelect}
             queryString={category.name}
-            buttonContent={'View Meals'}
           />
         ))}
       </div>
